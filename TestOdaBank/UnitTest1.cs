@@ -4,6 +4,11 @@ using OdaBank;
 
 namespace TestOdaBank
 {
+    /// <summary>
+    /// Testes de cálculo de saldo.
+    /// Caso haja algum erro no teste, a aplicação não deve ser disponibilizada de forma
+    /// alguma para os usuários.
+    /// </summary>
     public class TesteOdabank
     {
         [Theory]

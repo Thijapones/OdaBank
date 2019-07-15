@@ -6,6 +6,10 @@ namespace OdaBank
 {
     public class MenuPrincipal
     {
+        /// <summary>
+        /// Método de interface com o usuário.
+        /// </summary>
+        /// <returns></returns>
         public static int MenuInicial()
         {
             Console.WriteLine("Bem Vindo ao seu Caixa Odabank!\n");
@@ -33,6 +37,7 @@ namespace OdaBank
                 return 0;
             }
         }
+        //Método de tratativa de saída do programa. Normal End ou Abend.
         public static void Sair(int a)
         {
             if (a==5)

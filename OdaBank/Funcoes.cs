@@ -6,6 +6,14 @@ namespace OdaBank
 {
     public class Funcoes
     {
+        /// <summary>
+        /// Funções de Depósito.
+        /// Incrementa o saldo e a quantidade de notas de cada tipo dependendo da seleção
+        /// pré-definida pelo usuário.
+        /// Retorna para o menu principal caso a quantidade de notas digitada pelo usuário seja
+        /// 0 ou inválida.
+        /// </summary>
+        /// <param name="tipo"></param>
         public static void Depositos(int tipo)
         {
             Console.WriteLine("Por favor, selecione a quantidade de notas a depositar ou digite X para retornar ao menu anterior.");
@@ -41,6 +49,13 @@ namespace OdaBank
             }
             return;
         }
+        /// <summary>
+        /// Função de saque.
+        /// Deve sempre retornar as maiores notas possíveis primeiro.
+        /// Deve retornar um erro caso o valor desejado para saque seja maior que o saldo atual.
+        /// Deve retornar um erro caso o valor desejado não seja múltiplo de 10.
+        /// Deve rertornar ao menu caso o valor de saque seja 0 ou inválido.
+        /// </summary>
         public static void Saque()
         {
             Console.WriteLine("Por favor, selecione o valor a ser sacado ou digite X para retornar ao menu anterior.");
