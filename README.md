@@ -13,7 +13,9 @@ using System.Text;
 namespace OdaBank
 {
     /// <summary>
-    /// Controle geral
+    /// Controle geral.
+    /// Inicializa a quantidade de notas do caixa para 0, assim como o saldo atual do cliente.
+    /// Assim que um banco de dados for implementado, os valores iniciais devem ser alterados.
     /// </summary>
     public class Caixa
     {
