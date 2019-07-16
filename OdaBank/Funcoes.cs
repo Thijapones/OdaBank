@@ -54,7 +54,9 @@ namespace OdaBank
         /// Deve sempre retornar as maiores notas possíveis primeiro.
         /// Deve retornar um erro caso o valor desejado para saque seja maior que o saldo atual.
         /// Deve retornar um erro caso o valor desejado não seja múltiplo de 10.
-        /// Deve rertornar ao menu caso o valor de saque seja 0 ou inválido.
+        /// Deve retornar ao menu caso o valor de saque seja 0 ou inválido.
+        /// Caso a quantidade de notas for insuficiente para retornar o valor exato, o maior
+        /// aproximado será retornado para o usuário e uma mensagem de aviso será exibida.
         /// </summary>
         public static void Saque()
         {
@@ -69,7 +71,7 @@ namespace OdaBank
                     {
                         var saldoparcial = result;
                         var saque50 = saldoparcial / 50;
-                        if (saque50>Caixa.qtdnotas50)
+                        if (saque50 > Caixa.qtdnotas50)
                         {
                             saque50 = Caixa.qtdnotas50;
                         }
@@ -89,13 +91,20 @@ namespace OdaBank
                             saldoparcial = saldoparcial - (saque20 * 20);
                         }
                         var saque10 = saldoparcial / 10;
+                        if (saque10 > Caixa.qtdnotas10)
+                        {
+                            saque10 = Caixa.qtdnotas10;
+                        }
                         if (saque10 > 0)
                         {
                             SaqueNotas10.QtdNotas(saque10);
                             saldoparcial = saldoparcial - (saque10 * 10);
                         }
                         Caixa.saldototal = Caixa.saldototal - (saque50 * 50) - (saque20 * 20) - (saque10 * 10);
-
+                        if (saldoparcial!=result)
+                        {
+                            Console.WriteLine("Notas insuficientes para resgatar o valor. O máximo valor aproximado será sacado.");
+                        }
                         return;
                     }
                     else

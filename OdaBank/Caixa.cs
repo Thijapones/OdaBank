@@ -25,6 +25,7 @@ namespace OdaBank
                {
                     Funcoes.Depositos(x);
                     x=MenuPrincipal.MenuInicial();
+                    continue;
                }
                //Saques
                if (x==4)
