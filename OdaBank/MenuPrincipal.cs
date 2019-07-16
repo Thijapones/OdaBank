@@ -8,6 +8,7 @@ namespace OdaBank
     {
         /// <summary>
         /// Método de interface com o usuário.
+        /// Mostra as opções e um breve extrato para os usuários.
         /// </summary>
         /// <returns></returns>
         public static int MenuInicial()

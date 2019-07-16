@@ -26,14 +26,14 @@ namespace OdaBank
                //Depósitos
                if (x < 4)
                {
-                    Funcoes.Depositos(x);
+                    Deposito.Depositos(x);
                     x=MenuPrincipal.MenuInicial();
                     continue;
                }
                //Saques
                if (x==4)
                 {
-                    Funcoes.Saque();
+                    Saque.Saques();
                     x = MenuPrincipal.MenuInicial();
                 }
             }

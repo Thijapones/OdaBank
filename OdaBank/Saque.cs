@@ -4,51 +4,8 @@ using System.Text;
 
 namespace OdaBank
 {
-    public class Funcoes
+    public class Saque
     {
-        /// <summary>
-        /// Funções de Depósito.
-        /// Incrementa o saldo e a quantidade de notas de cada tipo dependendo da seleção
-        /// pré-definida pelo usuário.
-        /// Retorna para o menu principal caso a quantidade de notas digitada pelo usuário seja
-        /// 0 ou inválida.
-        /// </summary>
-        /// <param name="tipo"></param>
-        public static void Depositos(int tipo)
-        {
-            Console.WriteLine("Por favor, selecione a quantidade de notas a depositar ou digite X para retornar ao menu anterior.");
-            var qtdnotas = Console.ReadLine();
-
-            if (int.TryParse(qtdnotas, out int result))
-            {
-                if (tipo == 1)
-                {
-                    int a = Convert.ToInt32(qtdnotas);
-                    DepositaNotas10.QtdNotas(a);
-                    CalcValorTotal.ValorTotal();
-                    Console.WriteLine("Saldo Atual: R$ " + Caixa.saldototal + ",00.");
-                }
-                if (tipo == 2)
-                {
-                    int a = Convert.ToInt32(qtdnotas);
-                    DepositaNotas20.QtdNotas(a);
-                    CalcValorTotal.ValorTotal();
-                    Console.WriteLine("Saldo Atual: R$ " + Caixa.saldototal + ",00.");
-                }
-                if (tipo == 3)
-                {
-                    int a = Convert.ToInt32(qtdnotas);
-                    DepositaNotas50.QtdNotas(a);
-                    CalcValorTotal.ValorTotal();
-                    Console.WriteLine("Saldo Atual: R$ " + Caixa.saldototal + ",00.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Retornando ao Menu Principal.");
-            }
-            return;
-        }
         /// <summary>
         /// Função de saque.
         /// Deve sempre retornar as maiores notas possíveis primeiro.
@@ -58,7 +15,7 @@ namespace OdaBank
         /// Caso a quantidade de notas for insuficiente para retornar o valor exato, o maior
         /// aproximado será retornado para o usuário e uma mensagem de aviso será exibida.
         /// </summary>
-        public static void Saque()
+        public static void Saques()
         {
             Console.WriteLine("Por favor, selecione o valor a ser sacado ou digite X para retornar ao menu anterior.");
             var saque = Console.ReadLine();
@@ -101,7 +58,7 @@ namespace OdaBank
                             saldoparcial = saldoparcial - (saque10 * 10);
                         }
                         Caixa.saldototal = Caixa.saldototal - (saque50 * 50) - (saque20 * 20) - (saque10 * 10);
-                        if (saldoparcial!=result)
+                        if (saldoparcial != result)
                         {
                             Console.WriteLine("Notas insuficientes para resgatar o valor. O máximo valor aproximado será sacado.");
                         }
