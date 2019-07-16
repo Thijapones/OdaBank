@@ -5,7 +5,9 @@ using System.Text;
 namespace OdaBank
 {
     /// <summary>
-    /// Controle geral
+    /// Controle geral.
+    /// Inicializa a quantidade de notas do caixa para 0, assim como o saldo atual do cliente.
+    /// Assim que um banco de dados for implementado, os valores iniciais devem ser alterados.
     /// </summary>
     public class Caixa
     {
@@ -15,6 +17,7 @@ namespace OdaBank
         public static int saldototal = 0;
         public static void Main(string[] args)
         {
+            //Chama Menu para Usuário.
             var x = MenuPrincipal.MenuInicial();
 
             //Enquanto a opção selecionada pelo cliente gerar um retorno, não encerra o programa.
